@@ -5,14 +5,14 @@ module.exports = function(grunt) {
 		banner: '/*! <%= pkg.title || pkg.name %> - v<%= pkg.version %> - ' +
 			'<%= grunt.template.today("yyyy-mm-dd") %>\n' +
 			'<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;' +
-			' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n' ,
+			'* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author %>;', //+
+			//' Licensed <%= _.pluck(pkg.licenses, "type").join(", ") %> */\n' ,
 
 		license: 
 			'/* ========================================================================' + '\n' +
 
-			'* Extends Bootstrap v3.1.1' + '\n' + '\n' +
-			'* Copyright (c) <2015> PayPal' + '\n' +  '\n' +
+			'* Extends Bootstrap v3.3.0' + '\n' + '\n' +
+			'* Copyright (c) <2018> PayPal' + '\n' +  '\n' +
 			'* All rights reserved.' + '\n' +   '\n' +
 			'* Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:' + '\n' +'\n' +
 			'* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.' + '\n' +'\n' +
@@ -61,12 +61,13 @@ module.exports = function(grunt) {
 			options: {
 				banner: '<%= banner %>',
 				// beautify: true,
+                sourceMap: true,
 				mangle: false
 			},
 			dist: {
 				files: {
-					'plugins/js/bootstrap-accessibility.min.js': 'plugins/js/bootstrap-accessibility.js',
-					'plugins/js/bootstrap-accessibility_1.0.3.min.js': 'plugins/js/bootstrap-accessibility_1.0.3.js'
+					'plugins/js/bootstrap-accessibility.min.js': 'plugins/js/bootstrap-accessibility.js'// ,
+					// 'plugins/js/bootstrap-accessibility_<%= pkg.version %>.min.js': 'plugins/js/bootstrap-accessibility_<%= pkg.version %>.js'
 				}
 			}
 		},
